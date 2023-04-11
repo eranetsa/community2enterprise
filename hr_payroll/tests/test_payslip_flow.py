@@ -4,7 +4,7 @@
 import os
 
 from odoo.tools import config, test_reports
-from odoo.addons.om_om_hr_payroll.tests.common import TestPayslipBase
+from odoo.addons.om_hr_payroll.tests.common import TestPayslipBase
 
 
 class TestPayslipFlow(TestPayslipBase):
@@ -27,8 +27,8 @@ class TestPayslipFlow(TestPayslipBase):
         context = {
             "lang": "en_US", "tz": False, "active_model": "ir.ui.menu",
             "department_id": False, "section_id": False,
-            "active_ids": [self.ref("om_om_hr_payroll.menu_department_tree")],
-            "active_id": self.ref("om_om_hr_payroll.menu_department_tree")
+            "active_ids": [self.ref("om_hr_payroll.menu_department_tree")],
+            "active_id": self.ref("om_hr_payroll.menu_department_tree")
         }
         # I click on 'Compute Sheet' button on payslip
         richard_payslip.with_context(context).compute_sheet()
@@ -69,11 +69,11 @@ class TestPayslipFlow(TestPayslipBase):
         })
 
         # I print the payslip report
-        data, data_format = self.env.ref('om_om_hr_payroll.action_report_payslip').render(richard_payslip.ids)
+        data, data_format = self.env.ref('om_hr_payroll.action_report_payslip').render(richard_payslip.ids)
 
         # I print the payslip details report
-        data, data_format = self.env.ref('om_om_hr_payroll.payslip_details_report').render(richard_payslip.ids)
+        data, data_format = self.env.ref('om_hr_payroll.payslip_details_report').render(richard_payslip.ids)
 
         # I print the contribution register report
-        context = {'model': 'hr.contribution.register', 'active_ids': [self.ref('om_om_hr_payroll.hr_houserent_register')]}
-        test_reports.try_report_action(self.env.cr, self.env.uid, 'action_payslip_lines_contribution_register', context=context, our_module='om_hr_payroll')
+        context = {'model': 'hr.contribution.register', 'active_ids': [self.ref('om_hr_payroll.hr_houserent_register')]}
+        test_reports.try_report_action(self.env.cr, self.env.uid, 'action_payslip_lines_contribution_register', context=context, our_module='hr_payroll')
