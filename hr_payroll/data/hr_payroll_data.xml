@@ -7,7 +7,7 @@
             <field name="name">Basic Salary</field>
             <field name="sequence" eval="1"/>
             <field name="code">BASIC</field>
-            <field name="category_id" ref="om_hr_payroll.BASIC"/>
+            <field name="category_id" ref="hr_payroll.BASIC"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = contract.wage</field>
@@ -17,7 +17,7 @@
             <field name="name">Gross</field>
             <field name="sequence" eval="100"/>
             <field name="code">GROSS</field>
-            <field name="category_id" ref="om_hr_payroll.GROSS"/>
+            <field name="category_id" ref="hr_payroll.GROSS"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = categories.BASIC + categories.ALW</field>
@@ -27,7 +27,7 @@
 <!--            <field name="name">Unpaid Leave</field>-->
 <!--            <field name="sequence" eval="100"/>-->
 <!--            <field name="code">UNP</field>-->
-<!--            <field name="category_id" ref="om_hr_payroll.DED"/>-->
+<!--            <field name="category_id" ref="hr_payroll.DED"/>-->
 <!--            <field name="condition_select">none</field>-->
 <!--            <field name="amount_select">code</field>-->
 <!--            <field name="amount_python_compute">result=-(contract.wage / worked_days.WORK100.number_of_days) *-->
@@ -39,7 +39,7 @@
             <field name="name">House Rent Allowance</field>
             <field name="sequence" eval="3"/>
             <field name="code">HRA</field>
-            <field name="category_id" ref="om_hr_payroll.ALW"/>
+            <field name="category_id" ref="hr_payroll.ALW"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = contract.hra</field>
@@ -50,7 +50,7 @@
             <field name="name">Dearness Allowance</field>
             <field name="sequence" eval="5"/>
             <field name="code">DA</field>
-            <field name="category_id" ref="om_hr_payroll.ALW"/>
+            <field name="category_id" ref="hr_payroll.ALW"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = contract.da</field>
@@ -60,7 +60,7 @@
             <field name="name">Travel Allowance</field>
             <field name="sequence" eval="7"/>
             <field name="code">Travel</field>
-            <field name="category_id" ref="om_hr_payroll.ALW"/>
+            <field name="category_id" ref="hr_payroll.ALW"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = contract.travel_allowance</field>
@@ -70,7 +70,7 @@
             <field name="name">Meal Allowance</field>
             <field name="sequence" eval="9"/>
             <field name="code">Meal</field>
-            <field name="category_id" ref="om_hr_payroll.ALW"/>
+            <field name="category_id" ref="hr_payroll.ALW"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = contract.meal_allowance</field>
@@ -80,7 +80,7 @@
             <field name="name">Medical Allowance</field>
             <field name="sequence" eval="11"/>
             <field name="code">Medical</field>
-            <field name="category_id" ref="om_hr_payroll.ALW"/>
+            <field name="category_id" ref="hr_payroll.ALW"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = contract.medical_allowance</field>
@@ -90,7 +90,7 @@
             <field name="name">Net Salary</field>
             <field name="sequence" eval="200"/>
             <field name="code">NET</field>
-            <field name="category_id" ref="om_hr_payroll.NET"/>
+            <field name="category_id" ref="hr_payroll.NET"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">result = categories.BASIC + categories.ALW + categories.DED</field>

@@ -23,7 +23,7 @@ class TestHrPayrollAccount(common.TransactionCase):
 
         self._load('account', 'test', 'account_minimal_test.xml')
 
-        self.payslip_action_id = self.ref('om_hr_payroll.menu_department_tree')
+        self.payslip_action_id = self.ref('hr_payroll.menu_department_tree')
 
         self.res_partner_bank = self.env['res.partner.bank'].create({
             'acc_number': '001-9876543-21',
@@ -49,14 +49,14 @@ class TestHrPayrollAccount(common.TransactionCase):
             'name': 'Salary Structure for Software Developer',
             'code': 'SD',
             'company_id': self.ref('base.main_company'),
-            'parent_id': self.ref('om_hr_payroll.structure_base'),
+            'parent_id': self.ref('hr_payroll.structure_base'),
             'rule_ids': [(6, 0, [
-                    self.ref('om_hr_payroll.hr_salary_rule_houserentallowance1'),
-                    self.ref('om_hr_payroll.hr_salary_rule_convanceallowance1'),
-                    self.ref('om_hr_payroll.hr_salary_rule_professionaltax1'),
-                    self.ref('om_hr_payroll.hr_salary_rule_providentfund1'),
-                    self.ref('om_hr_payroll.hr_salary_rule_meal_voucher'),
-                    self.ref('om_hr_payroll.hr_salary_rule_sales_commission')
+                    self.ref('hr_payroll.hr_salary_rule_houserentallowance1'),
+                    self.ref('hr_payroll.hr_salary_rule_convanceallowance1'),
+                    self.ref('hr_payroll.hr_salary_rule_professionaltax1'),
+                    self.ref('hr_payroll.hr_salary_rule_providentfund1'),
+                    self.ref('hr_payroll.hr_salary_rule_meal_voucher'),
+                    self.ref('hr_payroll.hr_salary_rule_sales_commission')
             ])],
         })
 
@@ -69,12 +69,12 @@ class TestHrPayrollAccount(common.TransactionCase):
             'type_id': self.ref('hr_contract.hr_contract_type_emp'),
             'employee_id': self.hr_employee_john.id,
             'struct_id': self.hr_structure_softwaredeveloper.id,
-            'journal_id': self.ref('om_hr_payroll_account.expenses_journal'),
+            'journal_id': self.ref('hr_payroll_account.expenses_journal'),
         })
 
         self.hr_payslip = self.env['hr.payslip'].create({
             'employee_id': self.hr_employee_john.id,
-            'journal_id': self.ref('om_hr_payroll_account.expenses_journal'),
+            'journal_id': self.ref('hr_payroll_account.expenses_journal'),
         })
 
     def test_00_hr_payslip(self):

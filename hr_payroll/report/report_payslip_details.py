@@ -4,7 +4,7 @@ from odoo import api, models
 
 
 class PayslipDetailsReport(models.AbstractModel):
-    _name = 'report.om_hr_payroll.report_payslip_details'
+    _name = 'report.hr_payroll.report_payslip_details'
     _description = 'Payslip Details Report'
 
     def get_details_by_rule_category(self, payslip_lines):

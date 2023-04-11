@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
-                <button name="%(om_hr_payroll.act_hr_employee_payslip_list)d" class="oe_stat_button"
+                <button name="%(hr_payroll.act_hr_employee_payslip_list)d" class="oe_stat_button"
                         icon="fa-money" type="action" string="Payslip">
                     <field name="payslip_count" widget="statinfo"/>
                 </button>
@@ -17,7 +17,7 @@
 
     <menuitem id="menu_payroll_employee"
               name="Employees"
-              parent="om_hr_payroll.menu_hr_payroll_root"
+              parent="hr_payroll.menu_hr_payroll_root"
               sequence="15"/>
 
     <menuitem id="menu_hr_employee"
