@@ -12,7 +12,7 @@
     'summary': 'Generic Payroll system Integrated with Accounting',
     'description': """Generic Payroll system Integrated with Accounting.""",
     'depends': [
-        'om_hr_payroll',
+        'hr_payroll',
         'account'
     ],
     'data': [
